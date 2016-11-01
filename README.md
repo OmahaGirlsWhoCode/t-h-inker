@@ -7,3 +7,6 @@ T(h)inker is an app for users who have anxiety or ADD.
 #Coding
 The complete configuration file is needed to create a cordova app.  HTML, CSS, and JS files should go inside the www folder.
 
+Clone this repository into cloud9.
+
+Make sure you work off of branches.
