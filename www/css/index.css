@@ -104,3 +104,26 @@ h1 {
   width: 100%;
    background: #131D37;
 }
+#logo {
+    text-align: center;
+}
+
+#logo img {
+    width: 90%;
+    padding-bottom: 100px;
+}
+
+#squares {
+    text-align: center;
+}
+
+#squares img {
+    width: 100%;
+}
+#Start {
+  color: white;
+  
+}
+#Start h3 {
+    font-family: 'Quicksand', sans-serif;
+}
