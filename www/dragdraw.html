@@ -1,6 +1,18 @@
-<script type="application/processing" data-processing-target="pjs">
-
- void setup() {
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <link rel="stylesheet" type="text/css" href="css/game.css">
+        <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+        <title>t(h)inker</title>
+    </head>
+    <body>
+ <script type="application/processing" data-processing-target="pjs">
+ 
+void setup() {
 		noStroke();
     size(320, 568);
     background(0);
@@ -72,5 +84,13 @@ void mouseDragged() {
 	
 }
 
-
 </script>
+<div class= "top" >
+  <a class="view" href="index.html">Home</a>
+</div>
+<canvas id="pjs"></canvas>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/processing.1.4.8.min.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+    </body>
+</html>
