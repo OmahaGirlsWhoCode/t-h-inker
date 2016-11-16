@@ -102,6 +102,8 @@ h1 {
 }
 #app {
   width: 100%;
+  max-width: 940px;
+  
    background: #131D37;
 }
 #logo {
