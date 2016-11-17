@@ -120,11 +120,11 @@ h1 {
 #squares img {
     width: 100%;
 }
-#Start {
+#Message {
   color: white;
   font-family: 'Quicksand', sans-serif;
   
 }
-#Start h3 {
+#Message h3 {
     font-family: 'Quicksand', sans-serif;
 }
