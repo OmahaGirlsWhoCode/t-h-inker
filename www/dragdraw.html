@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <link rel="stylesheet" type="text/css" href="css/game.css">
+        <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+        <title>t(h)inker</title>
+    </head>
+    <body>
+ <script type="application/processing" data-processing-target="pjs">
+ 
+void setup() {
+		noStroke();
+    size(320, 568);
+    background(0);
+}
+
+
+
+ class SmoothEllipses {
+ 		//declare our attributes
+    // color, mousex, mouseY, width, height
+    int mX, mY;
+    int w, h;
+    int t;
+    //constructor for the ellipse (what we need in order to make an object)
+    SmoothEllipses(int x, int y, int wi, int hi){
+    	mX = x;
+      mY = y;
+      w = wi;
+      h = hi;
+      t = 0;
+    }
+    void drawEllipses(){
+    	fill(252, 60, 115);
+			ellipse(mX, mY, w, h);
+    }
+    
+ }
+ 
+ var ellipsesArray = [];
+ 
+ //functions (void setup)
+ //variables (var ellipsesPen)
+ //loops (for)
+ //conditionals (if-else)
+
+
+/*this function is part of the processing JS library, not one that we've created on our own like "void drawEllipses"*/
+
+void draw() {
+	
+  background(0);
+  //for(var s = 0; s < manySquares.length; s++){
+  //	manySquares[s].drawrect();
+  //}
+  
+  for(var e = 0; e < ellipsesArray.length; e++){
+  	
+    
+    SmoothEllipses r = ellipsesArray[e];
+
+     r.t++;
+     //after 15 seconds, stop drawing the ellipse
+     if (r.t < 90 ){
+     	  r.drawEllipses();
+     }
+     
+  }
+  
+}
+
+
+void mouseDragged() {
+    
+    SmoothEllipses n1 = new SmoothEllipses(mouseX, mouseY, 30, 30);
+    
+    ellipsesArray.push(n1);
+    
+    //SpoopySquare r12 = new SpoopySquare (125, 35, 60, 60, 10, 4);
+	
+}
+
+</script>
+<div class= "top" >
+  <a class="view" href="index.html">Home</a>
+</div>
+<canvas id="pjs"></canvas>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/processing.1.4.8.min.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+    </body>
+</html>
