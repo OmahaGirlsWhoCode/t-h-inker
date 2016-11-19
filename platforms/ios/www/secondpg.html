@@ -1,2 +1,171 @@
-<h2>Try me</h2>
-<a href="index.html">Go back</a>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <link rel="stylesheet" type="text/css" href="css/game.css">
+        <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+        <title>t(h)inker</title>
+    </head>
+    <body>
+ <script type="application/processing" data-processing-target="pjs">
+ 
+// variables
+// loops
+// functions
+// conditionals
+ 
+     class SpoopySquare {
+    	int xp, yp, width, height, curve;
+      int colour;
+      
+      SpoopySquare (int x, int y, int w, int h, int c, int col){
+      xp = x;
+      yp = y;
+      width = w;
+      height = h;
+      curve = c;
+      colour = col;
+      }     
+void ChangeColour(){
+//colours.length = 5
+//colours[5]
+  if (colour < colours.length-1) {
+      colour++;
+  }
+  else {
+     colour = 0;
+  }
+} 
+        
+boolean getRect(int mX, int mY) {
+  return (mX >= xp && mX <= xp + width && mY >= yp && mY <= yp + height);
+ }
+  
+void drawrect(){
+   fill(colours[colour]);
+   rect(xp, yp, width, height, curve);
+}
+ 
+ 
+}
+    
+    //
+    color b1 = color(103, 200, 201);
+    color b2 = color(59, 169, 224);
+    color b3 = color(55, 91, 169);
+    color b4 = color(19, 103,107);
+    color white  = color(255, 255, 255);
+    
+    
+    color r1 = color(255, 83, 13);
+    color r2 = color(232, 44, 12);
+    color r3 = color(255, 0, 0);
+    color r4 = color(232, 12, 122);
+    color white  = color(255, 255, 255);
+    
+    // 				0    1   2   3    4	
+    colours = [b1, b2, b3, b4, white];
+    
+    SpoopySquare r12 = new SpoopySquare (125, 35, 60, 60, 10, 4);
+    SpoopySquare r11 = new SpoopySquare (35, 35, 60, 60, 10, 4);
+    SpoopySquare r13 = new SpoopySquare (215, 35, 60, 60, 10, 4);
+    SpoopySquare r21 = new SpoopySquare (35, 125, 60, 60, 10, 4);
+    SpoopySquare r22 = new SpoopySquare (125, 125, 60, 60, 10, 4);
+    SpoopySquare r23 = new SpoopySquare (215, 125, 60, 60, 10, 4);
+    SpoopySquare r31 = new SpoopySquare (35, 215, 60, 60, 10, 4);
+    SpoopySquare r32 = new SpoopySquare (125, 215, 60, 60, 10, 4);
+    SpoopySquare r33 = new SpoopySquare (215, 215, 60, 60, 10, 4);
+    SpoopySquare r41 = new SpoopySquare (35, 305, 60, 60, 10, 4);
+    SpoopySquare r42 = new SpoopySquare (125, 305, 60, 60, 10, 4);
+    SpoopySquare r43 = new SpoopySquare (215, 305, 60, 60, 10, 4);
+    SpoopySquare r51 = new SpoopySquare (35, 395, 60, 60, 10, 4);
+    SpoopySquare r52 = new SpoopySquare (125, 395, 60, 60, 10, 4);
+    SpoopySquare r53 = new SpoopySquare (215, 395, 60, 60, 10, 4);
+
+ SpoopySquare toggle1 = new SpoopySquare (215, 475, 50, 20, 10, 4);
+ 
+ 				//0			1
+var tx = [213, 240];
+
+var txvalue = 0;
+
+var coloursarray = [[b1, b2, b3, b4, white], [r1, r2, r3, r4, white]];
+
+SpoopySquare toggle2 = new
+SpoopySquare (tx[txvalue], 475, 25, 20, 10, 1);
+
+ var manySquares = [r11, r12, r13, r21, r22, r23, r31, r32, r33, r41, r42, r43, r51, r52, r53];
+ 
+ void setup() {
+
+    size(320, 568);
+    background(0);
+    stroke(9, 8, 10);
+
+}
+
+	void draw(){
+  
+  //The 0th element of the menu squares array is written
+  //manySquares[0];
+  //manySquares[2];
+  
+  
+  for(var s = 0; s < manySquares.length; s++){
+  	manySquares[s].drawrect();
+  }
+ 
+  toggle1.drawrect();
+  noStroke();
+  toggle2.drawrect();
+
+}
+  
+  
+void mouseClicked (){
+  
+  
+  for(var s = 0; s < manySquares.length; s++){
+  
+    if (manySquares[s].getRect(mouseX, mouseY)){ 		
+      manySquares[s].ChangeColour();
+    }
+  }
+  
+  // did they do the toggle
+  if (mouseX > toggle1.xp  && mouseX < toggle1.xp + width && mouseY > toggle1.yp && mouseY < toggle1.yp + height) {
+  	
+  
+  	//change colors array
+ 
+    
+    if (txvalue < tx.length-1) {
+        txvalue++;
+    }
+    else {
+       txvalue = 0;
+    }
+    
+    toggle2.xp = tx[txvalue];
+    
+    colours = coloursarray[txvalue];
+  }
+  
+}
+
+
+
+
+</script>
+<div class= "top" >
+  <a class="view" href="index.html">Home</a>
+</div>
+<canvas id="pjs"></canvas>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/processing.1.4.8.min.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+    </body>
+</html>

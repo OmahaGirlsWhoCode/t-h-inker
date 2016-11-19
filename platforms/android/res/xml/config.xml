@@ -4,22 +4,18 @@
         <param name="android-package" value="org.apache.cordova.whitelist.WhitelistPlugin" />
         <param name="onload" value="true" />
     </feature>
+    <feature name="Vibration">
+        <param name="android-package" value="org.apache.cordova.vibration.Vibration" />
+    </feature>
     <name>HelloCordova</name>
     <description>
-        A sample Apache Cordova application that responds to the deviceready event.
+        T(h)inker is an Android app that provides an outlet for students suffering ADD/ADHD and anxiety through color stimulation and (optional) calming vibrations through their phones. This app can be used during lesson without being a distraction for students and teachers.
     </description>
-    <author email="dev@cordova.apache.org" href="http://cordova.io">
-        Apache Cordova Team
+    <author email="omahagirlswhocode@gmail.com" href="http://cordova.io">
+        Omaha Girls Who Code | High School Class
     </author>
     <content src="index.html" />
-    <access origin="*" />
-    <allow-intent href="http://*/*" />
-    <allow-intent href="https://*/*" />
-    <allow-intent href="tel:*" />
-    <allow-intent href="sms:*" />
-    <allow-intent href="mailto:*" />
-    <allow-intent href="geo:*" />
-    <allow-intent href="market:*" />
+    <access origin="http://omahagirlswhocode.com" />
+    <allow-intent href="mailto:omahagirlswhocode@gmail.com" />
     <preference name="loglevel" value="DEBUG" />
-    <preference name="AutoHideSplashScreen" value="false" />
 </widget>

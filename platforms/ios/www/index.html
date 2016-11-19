@@ -1,22 +1,4 @@
 <!DOCTYPE html>
-<!--
-    Licensed to the Apache Software Foundation (ASF) under one
-    or more contributor license agreements.  See the NOTICE file
-    distributed with this work for additional information
-    regarding copyright ownership.  The ASF licenses this file
-    to you under the Apache License, Version 2.0 (the
-    "License"); you may not use this file except in compliance
-    with the License.  You may obtain a copy of the License at
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing,
-    software distributed under the License is distributed on an
-    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-     KIND, either express or implied.  See the License for the
-    specific language governing permissions and limitations
-    under the License.
--->
 <html>
     <head>
         <!--
@@ -28,177 +10,47 @@
             * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
                 * Enable inline JS: add 'unsafe-inline' to default-src
         -->
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
+        <!-- Good default declaration:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of eval() and inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+                * Enable eval(): add 'unsafe-eval' to default-src
+        -->
+
+        <!-- Allow everything but only from the same origin and foo.com -->
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline'">
+
         <meta name="format-detection" content="telephone=no">
         <meta name="msapplication-tap-highlight" content="no">
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
         <link rel="stylesheet" type="text/css" href="css/index.css">
-        <title>Hello World</title>
+        <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+        <title>t{h}inker</title>
     </head>
     <body>
-        <div>
-            <h1>Apache Cordova</h1>
-            <a href="secondpg.html">Try navigating</a>
-            <script type="application/processing" data-processing-target="pjs">
 
+        <div id = "app">
+            <div class = "lines"></div>
+            <div class= "line1"></div>
+            <div class= "line2"></div>
+            <div class= "line3"></div>
+            <div class= "line4"></div>
+            <div id = "logo">
+              <img src="img/Logo.png" >  
+            </div>
+        
+            <div id = "buttons">
+                    <a href="secondpg.html" class="button1">Clickr</a>
+                    <a href="dragdraw.html" class="button1">Drag Draw</a>
+                    <a href="about.html" class="button1">About</a>
+            </div>
 
-class Square {
-    color blue = color(0, 102, 153);
-  color white = color(252, 252, 252);
-  color orange = color(204, 102, 0);
-  color colors[] = [white, orange, blue];
-  
-    int timeToChange = 30;
-  int timeTilChange = 100;
-  
-    int x, y, height, borderRadius, colorIndex, pastColorIndex, timeElapsed;
-  
-  
-  // initialize
-  Square(nX, nY, nH, nBR){
-    colorIndex = 0;
-    pastColorIndex = 0;
-    x = nX;
-    y = nY;
-    height = nH;
-    borderRadius = nBR;
-  }
-  
-  boolean changing() {
-    return (timeElapsed < timeToChange);
-  }
-  
-  void setFill(){
-    if (changing()) {
-        color interA = lerpColor(colors[pastColor()], colors[currentColor()], timeElapsed/timeToChange);
-      fill(interA);
-    } else {
-        fill(colors[currentColor()]);
-    }
-  }
-  
-  void drawRotated() {
-    //push it into another plane
-        pushMatrix();
-    // translate it so that the new origin i
-            translate(x+(height/2), y+(height/2));
-      rotate(radians(3*sin(timeElapsed*30)));
-      rect(0-(height/2), 0-(height/2), height, height, borderRadius, borderRadius, borderRadius, borderRadius);
-      popMatrix();
-  }
-  
-  
-  // draw the square with the color
-  void drawSquare() {
-    setFill();
-    if (changing()){
-        drawRotated();
-    } else {
-      rect(x, y, height, height, borderRadius, borderRadius, borderRadius, borderRadius);
-    }
-
-  }
-  
-  // check if coordinates are inside square
-  boolean inSquare(nX, nY) {
-    if (x <= nX && nX <= x + height && y <= nY && nY <= y + height) {
-        return true;
-    } else {
-        return false;
-    }
-  }
-  
-  int currentColor() {
-    return colorIndex;
-  }
-  
-  int pastColor() {
-    return pastColorIndex;
-  }
-  
-  
-  // changes color index attribute
-  void changeColor() {
-    pastColorIndex = colorIndex;
-    colorIndex = ((colorIndex + 1) % colors.length);
-    timeElapsed = 0;
-  }
-  
-  void addToTime() {
-    if (timeElapsed < timeTilChange) {
-        timeElapsed ++;
-    } else {
-      if (colorIndex != 0 ) {
-        pastColorIndex = colorIndex;
-        colorIndex = 0;
-        timeElapsed = 0;
-      }
-    }
-
-  }
-  
-}
-
-// Global variables
-int X, Y;
-int sizeX = screen.width;
-int sizeY = screen.height;
-
-// 1/6 of each 1/3 is margin
-// 3 1/6 margin split between 4
-int widthSquares = (sizeX / 3)*(5/6);
-int xOffset = (sizeX/18)*3/4;
-int yOffset = xOffset;
-
-int fadeFinal = 30;
-
-squares = [];
-
-// Setup the Processing Canvas
-void setup(){
-    background(0);
-  size( sizeX, sizeY );
-  strokeWeight( 1 );
-  frameRate( 15 );
-
-// create all squares
-  for (int i = 0; i < 3; i++) {
-    for (int j = 0; j < (sizeY / (sizeX / 3)); j ++) {
-        Square n = new Square(xOffset*(i+1) + (i * widthSquares), yOffset*(j+1) + (j * widthSquares), widthSquares, widthSquares/10);
-      squares.push(n);
-    }
-  }
-}
-
-// Main draw loop
-void draw(){
-    background(0);
-  size( sizeX, sizeY );
-    for (int i = 0; i < squares.length; i ++) {
-    
-    squares[i].addToTime();
-    squares[i].drawSquare();
-  }
-}
-
-void mouseClicked() {
-    X = mouseX;
-  Y = mouseY;
-  
-  for (int i = 0; i < squares.length; i ++) {
-    if (squares[i].inSquare(X, Y)) {
-        squares[i].changeColor();
-      navigator.vibrate(3000);
-    }
-  }
-}
-
-            </script>
-
-            <canvas id="pjs"></canvas>
-
-
+            <div id = "squares">
+              <img src="img/Squares.png">
+            </div>
         </div>
+
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/processing.1.4.8.min.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
