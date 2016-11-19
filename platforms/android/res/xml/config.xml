@@ -7,6 +7,10 @@
     <feature name="Vibration">
         <param name="android-package" value="org.apache.cordova.vibration.Vibration" />
     </feature>
+    <feature name="SplashScreen">
+        <param name="android-package" value="org.apache.cordova.splashscreen.SplashScreen" />
+        <param name="onload" value="true" />
+    </feature>
     <name>HelloCordova</name>
     <description>
         T(h)inker is an Android app that provides an outlet for students suffering ADD/ADHD and anxiety through color stimulation and (optional) calming vibrations through their phones. This app can be used during lesson without being a distraction for students and teachers.
