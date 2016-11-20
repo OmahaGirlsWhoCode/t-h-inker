@@ -105,8 +105,7 @@ h1 {
 #app {
   width: 100%;
   max-width: 940px;
-  
-   background: #131D37;
+  background: #131D37;
 }
 #logo {
     text-align: center;
@@ -199,8 +198,15 @@ h1 {
     margin-right: auto;
 }
 
-body {background-color: #131d37}
+/* Wendy's code for web app */
+body {
+    background-color: #131d37;
+    background-image: none;
+}
 
+#app {
+    margin: 0 auto;
+}
 
 
 

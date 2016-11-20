@@ -1,34 +1,121 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
+        <link rel="apple-touch-icon-precomposed" sizes="57x57" href="apple-touch-icon-57x57.png" />
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="apple-touch-icon-114x114.png" />
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="apple-touch-icon-72x72.png" />
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="apple-touch-icon-144x144.png" />
+        <link rel="apple-touch-icon-precomposed" sizes="60x60" href="apple-touch-icon-60x60.png" />
+        <link rel="apple-touch-icon-precomposed" sizes="120x120" href="apple-touch-icon-120x120.png" />
+        <link rel="apple-touch-icon-precomposed" sizes="76x76" href="apple-touch-icon-76x76.png" />
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="apple-touch-icon-152x152.png" />
+        <link rel="icon" type="image/png" href="favicon-196x196.png" sizes="196x196" />
+        <link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96" />
+        <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
+        <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
+        <link rel="icon" type="image/png" href="favicon-128.png" sizes="128x128" />
+        <meta name="application-name" content="&nbsp;"/>
+        <meta name="msapplication-TileColor" content="#FFFFFF" />
+        <meta name="msapplication-TileImage" content="mstile-144x144.png" />
+        <meta name="msapplication-square70x70logo" content="mstile-70x70.png" />
+        <meta name="msapplication-square150x150logo" content="mstile-150x150.png" />
+        <meta name="msapplication-wide310x150logo" content="mstile-310x150.png" />
+        <meta name="msapplication-square310x310logo" content="mstile-310x310.png" />
+
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' 'unsafe-eval'">
+
         <meta name="format-detection" content="telephone=no">
         <meta name="msapplication-tap-highlight" content="no">
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
         <link rel="stylesheet" type="text/css" href="css/game.css">
         <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
-        <title>t(h)inker</title>
+        <title>t(h)inker | Squares</title>
     </head>
     <body>
  <script type="application/processing" data-processing-target="pjs">
  
-// variables
-// loops
-// functions
-// conditionals
+//maxWidth
+    
+  var betterWidthName;
+  var yourWidth;
+  var xNum;
+  var yNum;
+  
+  void setup() {
+  
+    size(betterWidthName, screen.height);
+    background(0);
+    stroke(9, 8, 10);
+  
+  }
+  
+  
+    // setting a max width
+    if (screen.width > 940){
+      betterWidthName = 940;
+    } else {
+      betterWidthName = screen.width;
+    }
+    
+    
+     //yourWidth is the width of a single square
+    // three squares across
+    yourWidth = .18*betterWidthName;
+    
+    //xNum = width
+    xNum = (betterWidthName - (yourWidth*3))/4;
+    
+    
+    // screen.height - 40 = 40 px space for toggles
+    // yDown is the number of squares down that your screen has room for
+    // equation to get yDown:
+    // 
+    // Lauren drew alligators here for the greater than sign
+    // but we couldn't import it here
+    //  40 = toggle length at bottom; 50 = menu height at top
+    //                       width of a square
+    //                                     width between squares
+    // screen.height - 40 - 50 >= yDown*yourWidth + (yDown+1)*xNum
+    
+    // screen.height - 40 - 50  - xNum
+    // -------------------------- >= yDown
+    // yourWidth + xNum
+    
+    var yDown = Math.floor((screen.height - 40 - 50 - xNum)/(yourWidth + xNum))
+    
+    var manySquares = [];
+    
+    // this loops draws the correct number of squares for the screen size
+    // one loop is handling up and down (d = down)
+    // one loop is handling across (a = across)
+    /* this loop pushes the square it just made to the array so that it can still change color*/
+    
+    
+    for(int d = 1; d <= yDown; d ++ ){
+      for(int a = 1; a <= 3; a++) {
+        //make spoopy squares in here
+
+        SpoopySquare master = new SpoopySquare(a*xNum + (a-1)*yourWidth, d*xNum + (d-1)*yourWidth, yourWidth, yourWidth, 10, 4);
+        manySquares.push(master);     
+        
+      }
+    }
+
+    
  
-     class SpoopySquare {
-    	int xp, yp, width, height, curve;
+class SpoopySquare {
+      int xp, yp, width, height, curve;
       int colour;
       
-      SpoopySquare (int x, int y, int w, int h, int c, int col){
+  SpoopySquare (int x, int y, int w, int h, int c, int col){
       xp = x;
       yp = y;
       width = w;
       height = h;
       curve = c;
       colour = col;
-      }     
+      }
+      
 void ChangeColour(){
 //colours.length = 5
 //colours[5]
@@ -38,6 +125,10 @@ void ChangeColour(){
   else {
      colour = 0;
   }
+  if(aSwitch == 1){
+    navigator.vibrate(300);
+  }
+  
 } 
         
 boolean getRect(int mX, int mY) {
@@ -60,54 +151,47 @@ void drawrect(){
     color white  = color(255, 255, 255);
     
     
-    color r1 = color(255, 83, 13);
-    color r2 = color(232, 44, 12);
-    color r3 = color(255, 0, 0);
-    color r4 = color(232, 12, 122);
+    color r1 = color(255, 227, 151);
+    color r2 = color(247, 142, 97);
+    color r3 = color(246, 100, 75);
+    color r4 = color(232, 151, 151);
     color white  = color(255, 255, 255);
     
-    // 				0    1   2   3    4	
+
+    //        0    1   2   3    4 
     colours = [b1, b2, b3, b4, white];
+    var aSwitch = 1;
+    var ttx =[45, 70];
+    var ttxvalue = 0;
+
+
+            //0     1
+    var tx = [215, 240];
+
+    var txvalue = 0;
+
+    var coloursarray = [[b1, b2, b3, b4, white], [r1, r2, r3, r4, white]];
     
-    SpoopySquare r12 = new SpoopySquare (125, 35, 60, 60, 10, 4);
-    SpoopySquare r11 = new SpoopySquare (35, 35, 60, 60, 10, 4);
-    SpoopySquare r13 = new SpoopySquare (215, 35, 60, 60, 10, 4);
-    SpoopySquare r21 = new SpoopySquare (35, 125, 60, 60, 10, 4);
-    SpoopySquare r22 = new SpoopySquare (125, 125, 60, 60, 10, 4);
-    SpoopySquare r23 = new SpoopySquare (215, 125, 60, 60, 10, 4);
-    SpoopySquare r31 = new SpoopySquare (35, 215, 60, 60, 10, 4);
-    SpoopySquare r32 = new SpoopySquare (125, 215, 60, 60, 10, 4);
-    SpoopySquare r33 = new SpoopySquare (215, 215, 60, 60, 10, 4);
-    SpoopySquare r41 = new SpoopySquare (35, 305, 60, 60, 10, 4);
-    SpoopySquare r42 = new SpoopySquare (125, 305, 60, 60, 10, 4);
-    SpoopySquare r43 = new SpoopySquare (215, 305, 60, 60, 10, 4);
-    SpoopySquare r51 = new SpoopySquare (35, 395, 60, 60, 10, 4);
-    SpoopySquare r52 = new SpoopySquare (125, 395, 60, 60, 10, 4);
-    SpoopySquare r53 = new SpoopySquare (215, 395, 60, 60, 10, 4);
+    
+    // the toggles should be 10px away from the bottom
+    // screenheight - 40px from bottom
+    var toggleY = screen.height - 40;
+    
+    SpoopySquare toggle1 = new SpoopySquare (215, toggleY, 50, 20, 10, 4);
+    SpoopySquare toggle2 = new SpoopySquare (tx[txvalue], toggleY, 25, 20, 10, 1);
+    SpoopySquare toggle3 = new SpoopySquare (45, toggleY, 50, 20, 10, 4);
+    SpoopySquare toggle4 = new SpoopySquare (ttx[ttxvalue], toggleY, 25, 20, 10, 1);
 
- SpoopySquare toggle1 = new SpoopySquare (215, 475, 50, 20, 10, 4);
+
+
+
+
+
+
  
- 				//0			1
-var tx = [213, 240];
 
-var txvalue = 0;
 
-var coloursarray = [[b1, b2, b3, b4, white], [r1, r2, r3, r4, white]];
-
-SpoopySquare toggle2 = new
-SpoopySquare (tx[txvalue], 475, 25, 20, 10, 1);
-
- var manySquares = [r11, r12, r13, r21, r22, r23, r31, r32, r33, r41, r42, r43, r51, r52, r53];
- 
- void setup() {
-
-    size(320, 568);
-    background(0);
-    stroke(9, 8, 10);
-
-}
-
-	void draw(){
+  void draw(){
   
   //The 0th element of the menu squares array is written
   //manySquares[0];
@@ -115,32 +199,51 @@ SpoopySquare (tx[txvalue], 475, 25, 20, 10, 1);
   
   
   for(var s = 0; s < manySquares.length; s++){
-  	manySquares[s].drawrect();
+    manySquares[s].drawrect();
   }
- 
-  toggle1.drawrect();
   noStroke();
+  toggle1.drawrect();
   toggle2.drawrect();
-
-}
+  
+  if("vibrate" in navigator){
+   toggle3.drawrect();
+  toggle4.drawrect();
+}}
   
   
 void mouseClicked (){
-  
+
+  if (toggle3.getRect(mouseX, mouseY)) {
+   
+    if (ttxvalue < ttx.length-1) {
+        ttxvalue++;
+    }
+    else {
+       ttxvalue = 0;
+    }
+    
+    toggle4.xp = ttx[ttxvalue];
+    
+    if(aSwitch < 1){
+    aSwitch++
+    } else{
+    aSwitch = 0; 
+    }
+      
+  }
   
   for(var s = 0; s < manySquares.length; s++){
   
-    if (manySquares[s].getRect(mouseX, mouseY)){ 		
+    if (manySquares[s].getRect(mouseX, mouseY)){    
       manySquares[s].ChangeColour();
     }
   }
   
-  // did they do the toggle
-  if (mouseX > toggle1.xp  && mouseX < toggle1.xp + width && mouseY > toggle1.yp && mouseY < toggle1.yp + height) {
-  	
+  // did they do the toggle 
   
-  	//change colors array
- 
+  if (toggle1.getRect(mouseX, mouseY)) {    
+  
+    //change colors array 
     
     if (txvalue < tx.length-1) {
         txvalue++;
@@ -158,14 +261,15 @@ void mouseClicked (){
 
 
 
-
 </script>
 <div class= "top" >
-  <a class="view" href="index.html">Home</a>
+  <a class="view" href="index.html">
+    <img src="img/favicon-32x32.png" >
+  </a>
 </div>
 <canvas id="pjs"></canvas>
         <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="js/processing.1.4.8.min.js"></script>
+        <script type="text/javascript" src="js/processing.1.4.0.min.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
     </body>
 </html>

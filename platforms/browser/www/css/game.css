@@ -18,6 +18,7 @@
 }
 body {
     background-color: black;
+    background-image: none;
     margin:0px;
 }
 
@@ -27,4 +28,17 @@ canvas {
     margin-left: auto;
     margin-right: auto;
     display: block;
+}
+
+/* Wendy's code for web app */
+body {
+    background-color: #131d37;
+    background-image: none;
+}
+
+#app {
+    margin: 0 auto;
+}
+#pjs:focus {
+    outline: none;
 }

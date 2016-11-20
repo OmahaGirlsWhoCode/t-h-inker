@@ -58,8 +58,63 @@ Make sure you work off of branches.
 	```
 
 
+#Use Cloud9 to develop the app
 
-#Glossary
+
+Cloud9 offers workspaces that are like virtual machines (virtual computers) with all the right software installed.
+
+In this case, we need git, HTML5, and a server we can use to render the HTML/CSS/JavaScript.
+
+You should have been invited by email to use a student account.  
+
+1. Log into or set up your Clouod9 account.  
+2. Make sure your CLoud9 account is connected to your GitHub account.
+3. On GitHub, click 'Clone or Download' and copy the SSH (not HTTPS) url to this repo.
+4. On Cloud9, create a new workspace using this SSH url and set up a HTML workspace.
+5. Open the workspace.
+
+
+
+#Build the Mobile App using PhoneGap Build
+
+##Setting Up the App
+This repository was made using the template app from cordova.  To find out more check out the [cordova documentation](https://cordova.apache.org/docs/en/latest/guide/cli/).
+
+`cordova create appName`
+
+
+The `config.xml` file was updated for this file.
+
+ - the widget xml has the id of the app, the version, the website
+ - name of the app
+ - description of the app
+ - author and author website (omahagirlswhocode)
+ - content source lists the file that should open when the app opens (www/index.html)
+
+A few plugins were installed:
+ - cordova-plugin-whitelist to keep the app secure and not allow css or JS from other sources to load
+ - cordova-plugin-splashcreen that allows a splash icon to appear while the app is loading
+ - cordova-plugin-vibration allows vibration
+
+All the HTML, CSS, and JS are in the www folder.  The splash icons are in the res folder.  The other folders are needed to build the app but should not normally be modified.
+
+
+##Testing the app
+If phonegap is installed, you can run `phonegap serve` to run a phonegap server and test it on [http://emulate.phonegap.com/](http://emulate.phonegap.com/).
+
+
+##Devloper license
+Google requires a Google Play Developer account, and then you can publish an app on Google Play Developer Console.  Check out the documentation [here](https://support.google.com/googleplay/android-developer/answer/6112435?visit_id=1-636151849476603622-1643489180&rd=1).  Once you have created an app, you can get the license key.
+
+
+##Building the app
+
+Use [PhoneGap Build's online tool](https://build.phonegap.com/apps) to build the app (.sdk).  Add the license key.
+
+
+
+
+#Git Glossary
 
 The commands you will learn today are:
 

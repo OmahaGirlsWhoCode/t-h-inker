@@ -1,13 +1,17 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="io.cordova.hellocordova" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>HelloCordova</name>
+<widget id="com.omahagirlswhocode.t-hinker" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>t{h}inker</name>
     <description>
         T(h)inker is an Android app that provides an outlet for students suffering ADD/ADHD and anxiety through color stimulation and (optional) calming vibrations through their phones. This app can be used during lesson without being a distraction for students and teachers.
     </description>
-    <author email="omahagirlswhocode@gmail.com" href="http://cordova.io">
+    <author email="omahagirlswhocode@gmail.com" href="http://omahagirlswhocode.com">
         Omaha Girls Who Code | High School Class
     </author>
     <content src="index.html" />
     <access origin="http://omahagirlswhocode.com" />
     <allow-intent href="mailto:omahagirlswhocode@gmail.com" />
+    <splash src="res/Default@2x~t-hinker-splash-logo.png" />
+    <preference name="AutoHideSplashScreen" value="true" />
+    <preference name="SplashMaintainAspectRatio" value="true" />
+    <preference name="SplashShowOnlyFirstTime" value="true" />
 </widget>
