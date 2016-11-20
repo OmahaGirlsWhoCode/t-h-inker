@@ -61,7 +61,7 @@ Make sure you work off of branches.
 #Use Cloud9 to develop the app
 
 
-Cloud9 offers workspaces that are like virtual machines (virtual computers) with all the right software installed.
+Cloud9 offers cloud-based workspaces, ie virtual machines with all the right software installed.
 
 In this case, we need git, HTML5, and a server we can use to render the HTML/CSS/JavaScript.
 
@@ -104,20 +104,20 @@ If phonegap is installed, you can run `phonegap serve` to run a phonegap server 
 
 
 ##Devloper license
-Google requires a Google Play Developer account, and then you can publish an app on Google Play Developer Console.  Check out the documentation [here](https://support.google.com/googleplay/android-developer/answer/6112435?visit_id=1-636151849476603622-1643489180&rd=1).  Once you have created an app, you can get the license key.
+Google requires a Google Play Developer account, and then you can publish an app on Google Play Developer Console.  Check out the documentation [here](https://support.google.com/googleplay/android-developer/answer/6112435?visit_id=1-636151849476603622-1643489180&rd=1).
 
 
 ##Building the app
 
 Create an AdobeID account. 
 
-Use [PhoneGap Build's online tool](https://build.phonegap.com/apps) to build the app (.sdk).  With Java, generate a key console file to sign the APK.  Unlock the app on PhoneGap.
+Use [PhoneGap Build's online tool](https://build.phonegap.com/apps) to build the app (.apk).  With Java, generate a key console file to sign the APK and upload it to digitally sign the app.  Unlock the app on PhoneGap.
 
-Rebuild and download the .sdk.
+Rebuild and download the .apk.
 
 
 ##Google Developer Console
-Now on the Google Developer console, create a new app.  Fill out meta-data, upload screen shots, and the .sdk file.  
+Now on the Google Developer console, create a new app.  Fill out meta-data, upload screen shots, and the .apk file.  
 
 
 #Git Glossary
