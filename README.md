@@ -109,9 +109,15 @@ Google requires a Google Play Developer account, and then you can publish an app
 
 ##Building the app
 
-Use [PhoneGap Build's online tool](https://build.phonegap.com/apps) to build the app (.sdk).  Add the license key.
+Create an AdobeID account. 
+
+Use [PhoneGap Build's online tool](https://build.phonegap.com/apps) to build the app (.sdk).  With Java, generate a key console file to sign the APK.  Unlock the app on PhoneGap.
+
+Rebuild and download the .sdk.
 
 
+##Google Developer Console
+Now on the Google Developer console, create a new app.  Fill out meta-data, upload screen shots, and the .sdk file.  
 
 
 #Git Glossary
