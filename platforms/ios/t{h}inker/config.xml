@@ -1,27 +1,38 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!--
- Licensed to the Apache Software Foundation (ASF) under one
- or more contributor license agreements.  See the NOTICE file
- distributed with this work for additional information
- regarding copyright ownership.  The ASF licenses this file
- to you under the Apache License, Version 2.0 (the
- "License"); you may not use this file except in compliance
- with the License.  You may obtain a copy of the License at
-
- http://www.apache.org/licenses/LICENSE-2.0
-
- Unless required by applicable law or agreed to in writing,
- software distributed under the License is distributed on an
- "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- KIND, either express or implied.  See the License for the
- specific language governing permissions and limitations
- under the License.
--->
-<widget xmlns     = "http://www.w3.org/ns/widgets"
-        id        = "io.cordova.helloCordova"
-        version   = "2.0.0">
-
-    <!-- Preferences for iOS -->
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.omahagirlswhocode.t-hinker" version="1.0.0" xmlns="http://omahagirlswhocode.com" xmlns:cdv="https://github.com/OmahaGirlsWhoCode/t-h-inker.git">
+    <feature name="LocalStorage">
+        <param name="ios-package" value="CDVLocalStorage" />
+    </feature>
+    <feature name="HandleOpenUrl">
+        <param name="ios-package" value="CDVHandleOpenURL" />
+        <param name="onload" value="true" />
+    </feature>
+    <feature name="IntentAndNavigationFilter">
+        <param name="ios-package" value="CDVIntentAndNavigationFilter" />
+        <param name="onload" value="true" />
+    </feature>
+    <feature name="GestureHandler">
+        <param name="ios-package" value="CDVGestureHandler" />
+        <param name="onload" value="true" />
+    </feature>
+    <feature name="Vibration">
+        <param name="ios-package" value="CDVVibration" />
+    </feature>
+    <feature name="SplashScreen">
+        <param name="ios-package" value="CDVSplashScreen" />
+        <param name="onload" value="true" />
+    </feature>
+    <name>t{h}inker</name>
+    <description>
+        T(h)inker is an Android app that provides an outlet for students suffering ADD/ADHD and anxiety through color stimulation and (optional) calming vibrations through their phones. This app can be used during lesson without being a distraction for students and teachers.
+    </description>
+    <author email="omahagirlswhocode@gmail.com" href="http://omahagirlswhocode.com">
+        Omaha Girls Who Code | High School Class
+    </author>
+    <content src="index.html" />
+    <access origin="http://omahagirlswhocode.com" />
+    <allow-intent href="mailto:omahagirlswhocode@gmail.com" />
+    <splash src="res/Default@2x~t-hinker-splash-logo.png" />
     <preference name="AllowInlineMediaPlayback" value="false" />
     <preference name="BackupWebStorage" value="cloud" />
     <preference name="DisallowOverscroll" value="false" />
@@ -33,23 +44,9 @@
     <preference name="Suppresses3DTouchGesture" value="false" />
     <preference name="GapBetweenPages" value="0" />
     <preference name="PageLength" value="0" />
-    <preference name="PaginationBreakingMode" value="page" /> <!-- page, column -->
-    <preference name="PaginationMode" value="unpaginated" /> <!-- unpaginated, leftToRight, topToBottom, bottomToTop, rightToLeft -->
-
-    <feature name="LocalStorage">
-        <param name="ios-package" value="CDVLocalStorage"/>
-    </feature>
-    <feature name="HandleOpenUrl">
-        <param name="ios-package" value="CDVHandleOpenURL"/>
-        <param name="onload" value="true"/>
-    </feature>
-    <feature name="IntentAndNavigationFilter">
-        <param name="ios-package" value="CDVIntentAndNavigationFilter"/>
-        <param name="onload" value="true"/>
-    </feature>
-    <feature name="GestureHandler">
-        <param name="ios-package" value="CDVGestureHandler"/>
-        <param name="onload" value="true"/>
-    </feature>
-
+    <preference name="PaginationBreakingMode" value="page" />
+    <preference name="PaginationMode" value="unpaginated" />
+    <preference name="AutoHideSplashScreen" value="true" />
+    <preference name="SplashMaintainAspectRatio" value="true" />
+    <preference name="SplashShowOnlyFirstTime" value="true" />
 </widget>

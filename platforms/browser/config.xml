@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.omahagirlswhocode.t-hinker" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="com.omahagirlswhocode.t-hinker" version="1.0.0" xmlns="http://omahagirlswhocode.com" xmlns:cdv="https://github.com/OmahaGirlsWhoCode/t-h-inker.git">
     <name>t{h}inker</name>
     <description>
         T(h)inker is an Android app that provides an outlet for students suffering ADD/ADHD and anxiety through color stimulation and (optional) calming vibrations through their phones. This app can be used during lesson without being a distraction for students and teachers.
