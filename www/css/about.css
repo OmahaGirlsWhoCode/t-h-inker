@@ -1,13 +1,11 @@
 .about {
-    font-size: 16px;
-    font-family: Calibri;
-    color: white;
+  color: blue;
+  text-align: center;
 }
 
 .about-info {
-    font-size: 30px;
-    font-family: Calibri;
-    color: lightBlue;
+  color: white;
+  text-align: center;
 }
 
 .top {
@@ -23,21 +21,15 @@ body {
     background-color: black;
     background-image: none;
     margin:0px;
+    font-family: calibri;
 }
 .gwc-logo {
     
 }
 
-/* Wendy's code for web app */
-body {
-    background-color: black;
-    background-image: none;
-}
-
-#app {
-	width:100%;
-    max-width: 940px;
-    margin: 0 auto;
-    text-align: center;
-    background-color: black;
+div {
+  max-width: 350px;
+  background-color: black;
+  padding: 3%;
+  margin: auto;
 }
