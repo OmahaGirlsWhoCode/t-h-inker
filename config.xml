@@ -17,20 +17,20 @@
 
 
     <platform name="android">
-        <splash src="res/screen/android/screen-72x72.png" density="hdpi"/>
-        <splash src="res/screen/android/screen-32x32.png" density="ldpi"/>
-        <splash src="res/screen/android/screen-57x57.png" density="mdpi"/>
-        <splash src="res/screen/android/screen-96x96.png" density="xhdpi"/>
+        <icon src="www/res/icon/android/screen-72x72.png" density="hdpi"/>
+        <icon src="www/res/icon/android/screen-32x32.png" density="ldpi"/>
+        <icon src="www/res/icon/android/screen-57x57.png" density="mdpi"/>
+        <icon src="www/res/icon/android/screen-96x96.png" density="xhdpi"/>
         <!-- you can use any density that exists in the Android project -->
-        <splash src="res/screen/android/screen-72x72.png" density="land-hdpi"/>
-        <splash src="res/screen/android/screen-32x32.png" density="land-ldpi"/>
-        <splash src="res/screen/android/screen-57x57.png" density="land-mdpi"/>
-        <splash src="res/screen/android/screen-96x96.png" density="land-xhdpi"/>
+        <splash src="www/res/screen/android/screen-72x72.png" density="land-hdpi"/>
+        <splash src="www/res/screen/android/screen-32x32.png" density="land-ldpi"/>
+        <splash src="www/res/screen/android/screen-57x57.png" density="land-mdpi"/>
+        <splash src="www/res/screen/android/screen-96x96.png" density="land-xhdpi"/>
 
-        <splash src="res/screen/android/screen-72x72.png" density="port-hdpi"/>
-        <splash src="res/screen/android/screen-32x32.png" density="port-ldpi"/>
-        <splash src="res/screen/android/screen-57x57.png" density="port-mdpi"/>
-        <splash src="res/screen/android/screen-96x96.png" density="port-xhdpi"/>
+        <splash src="www/res/screen/android/screen-72x72.png" density="port-hdpi"/>
+        <splash src="www/res/screen/android/screen-32x32.png" density="port-ldpi"/>
+        <splash src="www/res/screen/android/screen-57x57.png" density="port-mdpi"/>
+        <splash src="www/res/screen/android/screen-96x96.png" density="port-xhdpi"/>
     </platform>
     <preference name="SplashScreen" value="screen" />
     <preference name="SplashScreenDelay" value="10000" />

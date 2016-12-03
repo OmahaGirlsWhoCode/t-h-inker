@@ -1,16 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="com.omahagirlswhocode.t-hinker" version="1.0.0" xmlns="http://omahagirlswhocode.com" xmlns:cdv="https://github.com/OmahaGirlsWhoCode/t-h-inker.git">
-    <feature name="Whitelist">
-        <param name="android-package" value="org.apache.cordova.whitelist.WhitelistPlugin" />
-        <param name="onload" value="true" />
-    </feature>
-    <feature name="Vibration">
-        <param name="android-package" value="org.apache.cordova.vibration.Vibration" />
-    </feature>
-    <feature name="SplashScreen">
-        <param name="android-package" value="org.apache.cordova.splashscreen.SplashScreen" />
-        <param name="onload" value="true" />
-    </feature>
+
+
     <name>t{h}inker</name>
     <description>
         T(h)inker is an Android app that provides an outlet for students suffering ADD/ADHD and anxiety through color stimulation and (optional) calming vibrations through their phones. This app can be used during lesson without being a distraction for students and teachers.
@@ -18,13 +9,16 @@
     <author email="omahagirlswhocode@gmail.com" href="http://omahagirlswhocode.com">
         Omaha Girls Who Code | High School Class
     </author>
+    <plugin name="cordova-plugin-splashscreen" source="npm" spec="~3.2.1" />
+    <plugin name="cordova-plugin-vibration" source="npm" spec="~2.1.0" />
+    <plugin name="cordova-plugin-whitelist" source="npm" spec="~1.2.1" />
     <content src="index.html" />
     <access origin="http://omahagirlswhocode.com" />
     <allow-intent href="mailto:omahagirlswhocode@gmail.com" />
-    <splash density="hdpi" src="res/screen/android/screen-72x72.png" />
-    <splash density="ldpi" src="res/screen/android/screen-32x32.png" />
-    <splash density="mdpi" src="res/screen/android/screen-57x57.png" />
-    <splash density="xhdpi" src="res/screen/android/screen-96x96.png" />
+    <icon density="hdpi" src="res/screen/android/screen-72x72.png" />
+    <icon density="ldpi" src="res/screen/android/screen-32x32.png" />
+    <icon density="mdpi" src="res/screen/android/screen-57x57.png" />
+    <icon density="xhdpi" src="res/screen/android/screen-96x96.png" />
     <splash density="land-hdpi" src="res/screen/android/screen-72x72.png" />
     <splash density="land-ldpi" src="res/screen/android/screen-32x32.png" />
     <splash density="land-mdpi" src="res/screen/android/screen-57x57.png" />
