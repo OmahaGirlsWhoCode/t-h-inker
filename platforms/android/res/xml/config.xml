@@ -21,6 +21,10 @@
     <content src="index.html" />
     <access origin="http://omahagirlswhocode.com" />
     <allow-intent href="mailto:omahagirlswhocode@gmail.com" />
+    <splash density="hdpi" src="res/screen/android/screen-72x72.png" />
+    <splash density="ldpi" src="res/screen/android/screen-32x32.png" />
+    <splash density="mdpi" src="res/screen/android/screen-57x57.png" />
+    <splash density="xhdpi" src="res/screen/android/screen-96x96.png" />
     <splash density="land-hdpi" src="res/screen/android/screen-72x72.png" />
     <splash density="land-ldpi" src="res/screen/android/screen-32x32.png" />
     <splash density="land-mdpi" src="res/screen/android/screen-57x57.png" />
