@@ -32,7 +32,6 @@
     <content src="index.html" />
     <access origin="http://omahagirlswhocode.com" />
     <allow-intent href="mailto:omahagirlswhocode@gmail.com" />
-    <splash src="res/Default@2x~t-hinker-splash-logo.png" />
     <preference name="AllowInlineMediaPlayback" value="false" />
     <preference name="BackupWebStorage" value="cloud" />
     <preference name="DisallowOverscroll" value="false" />
@@ -46,7 +45,8 @@
     <preference name="PageLength" value="0" />
     <preference name="PaginationBreakingMode" value="page" />
     <preference name="PaginationMode" value="unpaginated" />
-    <preference name="AutoHideSplashScreen" value="true" />
+    <preference name="SplashScreen" value="screen" />
+    <preference name="SplashScreenDelay" value="10000" />
     <preference name="SplashMaintainAspectRatio" value="true" />
     <preference name="SplashShowOnlyFirstTime" value="true" />
 </widget>
