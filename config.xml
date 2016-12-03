@@ -17,6 +17,10 @@
 
 
     <platform name="android">
+        <splash src="res/screen/android/screen-72x72.png" density="hdpi"/>
+        <splash src="res/screen/android/screen-32x32.png" density="ldpi"/>
+        <splash src="res/screen/android/screen-57x57.png" density="mdpi"/>
+        <splash src="res/screen/android/screen-96x96.png" density="xhdpi"/>
         <!-- you can use any density that exists in the Android project -->
         <splash src="res/screen/android/screen-72x72.png" density="land-hdpi"/>
         <splash src="res/screen/android/screen-32x32.png" density="land-ldpi"/>
