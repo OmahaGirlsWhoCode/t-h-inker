@@ -21,9 +21,17 @@
     <content src="index.html" />
     <access origin="http://omahagirlswhocode.com" />
     <allow-intent href="mailto:omahagirlswhocode@gmail.com" />
-    <splash src="res/Default@2x~t-hinker-splash-logo.png" />
+    <splash density="land-hdpi" src="res/screen/android/screen-72x72.png" />
+    <splash density="land-ldpi" src="res/screen/android/screen-32x32.png" />
+    <splash density="land-mdpi" src="res/screen/android/screen-57x57.png" />
+    <splash density="land-xhdpi" src="res/screen/android/screen-96x96.png" />
+    <splash density="port-hdpi" src="res/screen/android/screen-72x72.png" />
+    <splash density="port-ldpi" src="res/screen/android/screen-32x32.png" />
+    <splash density="port-mdpi" src="res/screen/android/screen-57x57.png" />
+    <splash density="port-xhdpi" src="res/screen/android/screen-96x96.png" />
     <preference name="loglevel" value="DEBUG" />
-    <preference name="AutoHideSplashScreen" value="true" />
+    <preference name="SplashScreen" value="screen" />
+    <preference name="SplashScreenDelay" value="10000" />
     <preference name="SplashMaintainAspectRatio" value="true" />
     <preference name="SplashShowOnlyFirstTime" value="true" />
 </widget>

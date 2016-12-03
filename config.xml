@@ -26,7 +26,7 @@
         <splash src="res/screen/android/screen-72x72.png" density="port-hdpi"/>
         <splash src="res/screen/android/screen-32x32.png" density="port-ldpi"/>
         <splash src="res/screen/android/screen-57x57.png" density="port-mdpi"/>
-        <splash src="res/screen/android/sscreen-96x96.png" density="port-xhdpi"/>
+        <splash src="res/screen/android/screen-96x96.png" density="port-xhdpi"/>
     </platform>
     <preference name="SplashScreen" value="screen" />
     <preference name="SplashScreenDelay" value="10000" />
